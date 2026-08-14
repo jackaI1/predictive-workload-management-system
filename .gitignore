@@ -1,0 +1,43 @@
+# ---------------------------------------------------------------------------
+# Credentials — NEVER commit these.
+# ---------------------------------------------------------------------------
+.env
+creds.json
+.streamlit/secrets.toml
+*.pem
+*service-account*.json
+
+# ---------------------------------------------------------------------------
+# Exported history / scratch dumps. A file like `git_history_with_code.txt`
+# re-introduces every secret the log ever held, including ones already removed
+# from the working tree.
+# ---------------------------------------------------------------------------
+git_history*.txt
+*_history_with_code.txt
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# ---------------------------------------------------------------------------
+# Tooling / editors / OS
+# ---------------------------------------------------------------------------
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
