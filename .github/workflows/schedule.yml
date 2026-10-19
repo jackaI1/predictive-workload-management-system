@@ -15,7 +15,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11' # Stable version
+          python-version: '3.12' # Required by the pinned NumPy dependency
 
       - name: Install required libraries
         run: pip install -r requirements.txt

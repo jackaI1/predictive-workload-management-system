@@ -38,10 +38,10 @@ load_dotenv()
 EASTERN = ZoneInfo("America/New_York")
 
 CLICKUP_TOKEN = os.environ.get("CLICKUP_TOKEN")
-LIST_ID = "your-clickup-list-id-here"
-GOOGLE_SHEET_URL = "https://docs.google.com/spreadsheets/d/your-google-sheet-id-here/edit"
+LIST_ID = os.environ.get("LIST_ID", "your-clickup-list-id-here")
+GOOGLE_SHEET_URL = os.environ.get("GOOGLE_SHEET_URL", "https://docs.google.com/spreadsheets/d/your-google-sheet-id-here/edit")
 
-PROGRESSION_STATUS_FIELD_ID = "your-custom-field-id-here"
+PROGRESSION_STATUS_FIELD_ID = os.environ.get("PROGRESSION_STATUS_FIELD_ID", "your-custom-field-id-here")
 
 # Matches trailing "- 1st review", "- first markup", "- 2nd Review", etc. (case-insensitive)
 REVIEW_SUFFIX_RE = re.compile(
