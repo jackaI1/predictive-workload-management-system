@@ -1,6 +1,6 @@
 # Predictive Workload Management System
 
-![Demo](docs/demo.gif)
+https://github.com/user-attachments/assets/a83487d5-7723-4faf-907a-2a4d003acbea
 
 Work arrives as short, hand-typed entries in a project tracker — a line of text
 and a due date — which says nothing about how much work any of them actually is.
