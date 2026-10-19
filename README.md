@@ -125,7 +125,7 @@ Receipt changes and dependencies immediately recompute the plan.
   Edits last for the browser session and do not write to ClickUp or Google Sheets.
 
 ```bash
-pip install pytest
+pip install -r requirements-dev.txt
 python -m pytest tests/ -q
 ```
 
@@ -227,5 +227,7 @@ tests/            pytest suite over the parsers
 Developed for an engineering workflow and published with written permission. Client information, firm documents, internal resource identifiers
 and proprietary data are excluded — every workspace, sheet and folder identifier
 in this repository is a placeholder.
+## License
 
-Licensed under the MIT License.
+MIT, see LICENSE. Third-party components are listed in THIRD_PARTY_NOTICES.md.
+

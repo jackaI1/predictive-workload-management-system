@@ -1,3 +1,5 @@
+# Keep the audited transitive resolution reproducible.
+-c requirements-lock.txt
 # Pinned to the versions this project's test suite was verified against.
 # Every package below is imported directly by the source; nothing here is
 # transitive-only.
@@ -8,19 +10,19 @@ plotly==6.9.0
 
 # --- Data handling -----------------------------------------------------------
 pandas==3.0.5
-numpy==2.5.2                    # snapshotter.py
-openpyxl==3.1.5                 # expander.py reads .xlsx schedules
+numpy==2.5.2  # snapshotter.py
+openpyxl==3.1.5  # expander.py reads .xlsx schedules
 
 # --- Google Sheets / Drive ---------------------------------------------------
 gspread==6.2.1
-google-auth==2.56.3             # google.oauth2.service_account
-google-api-python-client==2.198.0   # googleapiclient.discovery (expander.py)
+google-auth==2.56.3  # google.oauth2.service_account
+google-api-python-client==2.198.0  # googleapiclient.discovery (expander.py)
 
 # --- ClickUp REST API --------------------------------------------------------
-requests==2.34.2                # ClickUpQA.py, snapshotter.py
+requests==2.34.2  # ClickUpQA.py, snapshotter.py
 
 # --- Local .env loading ------------------------------------------------------
-python-dotenv==1.2.2            # ClickUpQA.py, snapshotter.py
+python-dotenv==1.2.2  # ClickUpQA.py, snapshotter.py
 
 # --- Development -------------------------------------------------------------
 # pytest==9.1.1                 # uncomment to run the test suite

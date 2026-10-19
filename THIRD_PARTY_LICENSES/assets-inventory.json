@@ -1,0 +1,992 @@
+[
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/favicon.png",
+    "sha256": "89fe5c560c3b6b3c4a3af5791691a2c606bb24b9f6deb7e71dccb509d588d7e1",
+    "license": "Apache-2.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_AMS-Regular.BQhdFMY1.woff2",
+    "sha256": "0cdd387c9590a1a9f9794560022dbb59654a7d86f187aa0c81495ad42d3a7308",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_AMS-Regular.DMm9YOAa.woff",
+    "sha256": "30da91e84c893f875e252689faebdc590b2871145e8adc7f9a9d4dbd8ce0b251",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_AMS-Regular.DRggAlZN.ttf",
+    "sha256": "68534840bcfdd2bffb6f0e8deb48684dd01e7f04ea2813267577afb906de1d13",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Caligraphic-Bold.ATXxdsX0.ttf",
+    "sha256": "07d8e303ce4fc12b4bb54f1004170dd190a1f3db45d400fe68060df3e0897268",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Caligraphic-Bold.BEiXGLvX.woff",
+    "sha256": "1ae6bd7475590e97e7f145a89e09ccde322f7a6bc0b91607b1c8b8ee28290fed",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Caligraphic-Bold.Dq_IR9rO.woff2",
+    "sha256": "de7701e42cf1f4cf0b766c03fb27977207eee2f4fd5d76fa82188406da43ea4c",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Caligraphic-Regular.CTRA-rTL.woff",
+    "sha256": "3398dd02302557a793f2863f88e02d96ce10df2abffa07c8e9fa90775116e65c",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Caligraphic-Regular.Di6jR-x-.woff2",
+    "sha256": "5d53e70ad607c2352162dec9e0923fb54ecdafaccbf604cd8dcf7d00facb989b",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Caligraphic-Regular.wX97UBjC.ttf",
+    "sha256": "ed0b74372feefcbb9c0666b2e210da37b7e49fa7fbbf3eeb11db5f693dacfbb7",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Fraktur-Bold.BdnERNNW.ttf",
+    "sha256": "9163df9c7122432e6495b4229fa9071cf9ae86a758ae5efc4924ec2e1a6dbce1",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Fraktur-Bold.BsDP51OF.woff",
+    "sha256": "9be7ceb88004ab8ad124082246fbfcca4091e36385d4ec6ed1df67375dad50fb",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Fraktur-Bold.CL6g_b3V.woff2",
+    "sha256": "74444efd593c005e3f4573b44524704c0af0a937fe911cca9e94068d0d140d3f",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Fraktur-Regular.CB_wures.ttf",
+    "sha256": "1e6f9579e90e2cac37f8f60a597c436e075c114385652b7cbeb0dec0421291b3",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Fraktur-Regular.CTYiF6lA.woff2",
+    "sha256": "51814d270d06ff0255dba0799994fa4d8c84d11f09951d47595f4abb1f3602dc",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Fraktur-Regular.Dxdc4cR9.woff",
+    "sha256": "5e28753be717dac97f559f49bc10be9cf3c124ddcabda6659d11cb68febc6463",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Main-Bold.Cx986IdX.woff2",
+    "sha256": "0f60d1b897938ec918c8ce073092411baf9438f6739465693ff18b0f9d20b021",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Main-Bold.Jm3AIy58.woff",
+    "sha256": "c76c5d696297d51b9cb1639c7da4334f0e7dec81b42b11213b5e25ef671bb822",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Main-Bold.waoOVXN0.ttf",
+    "sha256": "138ac28d1663b3037e9c5f52371fa5c63d8324f4a38d22cd573e6ea3a3fd0cf8",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Main-BoldItalic.DxDJ3AOS.woff2",
+    "sha256": "99cd42a3c072d918f2f44984a807cf7aa16e13545fd0875fc07c6c65f99e715b",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Main-BoldItalic.DzxPMmG6.ttf",
+    "sha256": "70ee1f64a20f2048c21940ef46d0144fd215baa953ca69afd1e31e98544f708f",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Main-BoldItalic.SpSLRI95.woff",
+    "sha256": "a6f7ec0d846ac7ad975adb8959c37ed49b94acbc4ae436db9ce9e20287e4a64c",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Main-Italic.3WenGoN9.ttf",
+    "sha256": "0d85ae7cc30f23790a7f1a58c4a112fdca8aae769b6ba11429af1d98b1b6cb3a",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Main-Italic.BMLOBm91.woff",
+    "sha256": "f1d6ef86f3b11a528bd5185199bd2443ecb2b0dead96d88674b5a2c12be24bdf",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Main-Italic.NWA7e6Wa.woff2",
+    "sha256": "97479ca6cce906abc961ecac96faa5f9ca2e61b8e7670d475826bcdee9a7c267",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Main-Regular.B22Nviop.woff2",
+    "sha256": "c2342cd8b869e01752a9321dc17213fc40d4d04c79688c1d43f2cf316abd7866",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Main-Regular.Dr94JaBh.woff",
+    "sha256": "c6368d87e8a1a3a5d337623d83d8dc4b868f242a9ad476237d6f8d1e0f168cdc",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Main-Regular.ypZvNtVU.ttf",
+    "sha256": "d0332f52868370fd83ae7fa46470f90c8f2eab2fcf12bc4f88080b340c95a830",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Math-BoldItalic.B3XSjfu4.ttf",
+    "sha256": "f9377ab0271cda59af24bcffbd46a4d0c8a3572ffafdbb38de2ad5ea7b0d5ee5",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Math-BoldItalic.CZnvNsCZ.woff2",
+    "sha256": "dc47344dbb6cb5b655c8460d561f4df5f501b90c804ad3c6cec65fe322351ab1",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Math-BoldItalic.iY-2wyZ7.woff",
+    "sha256": "850c0af5c2238497febaf5e461d880bf458c341f42f4f330f1b1ab5698b1998e",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Math-Italic.DA0__PXp.woff",
+    "sha256": "8a8d244581371912b8f3f5a23e2437cb2a59cd9bcaebb0346e722c05737a2571",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Math-Italic.flOr_0UB.ttf",
+    "sha256": "08ce98e51b04d58945a301e639e02b6998af29fdfd61a7b8afdd07bbfc479d4a",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Math-Italic.t53AETM-.woff2",
+    "sha256": "7af58c5ec8f132a2ddde9027c6d7814decce4d3b822a11192a42a20e2e973264",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_SansSerif-Bold.CFMepnvq.ttf",
+    "sha256": "1ece03f79f95277d57dc7f6b435a74e1379b0d46104a8530286b60ff49369ea0",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_SansSerif-Bold.D1sUS0GD.woff2",
+    "sha256": "e99ae51144bf1232efcc1bfe5add36262c6866b0faab24fa75740e1b98577a62",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_SansSerif-Bold.DbIhKOiC.woff",
+    "sha256": "ece03cfd83e22c212cdef66feb8442d25a083beb988db3f1883f3f9738d750ba",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_SansSerif-Italic.C3H0VqGB.woff2",
+    "sha256": "00b26ac825e2095056396e0553b8ac26d3f8ad158c3826e28b4c45b385c4714a",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_SansSerif-Italic.DN2j7dab.woff",
+    "sha256": "91ee67500cc0129aa0ace3ac5c61ff1692102f0f31d02b69347fba35dcb75bf2",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_SansSerif-Italic.YYjJ1zSn.ttf",
+    "sha256": "3931dd81faed86ba021bb2bbdc36f5bed9a38d6b4f4077aca59b265aa1b02083",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_SansSerif-Regular.BNo7hRIc.ttf",
+    "sha256": "f36ea897e19f4a2e571d1e900e4e3710e438deb05a842486045ba0a3e616a4ad",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_SansSerif-Regular.CS6fqUqJ.woff",
+    "sha256": "11e4dc8a6471ff6d6ee561d53d10fde8f7489e798257ff449c5d37c197435605",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_SansSerif-Regular.DDBCnlJ7.woff2",
+    "sha256": "68e8c73ef42afd3ccec58bf0fba302cce448938e7fc020a5e31f8a952eee1342",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Script-Regular.C5JkGWo-.ttf",
+    "sha256": "1c67f068fea8bb09bf099c088b1cf64bd27516a6e07f4684344873564bb66a67",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Script-Regular.D3wIWfF6.woff2",
+    "sha256": "036d4e95149b69ff9bcc0cd55771efeb25ffa3947293e69acd78d5ac328c684b",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Script-Regular.D5yQViql.woff",
+    "sha256": "d96cdf2b3bdd4d64a8fd5f74a4c467f123a8a73931cd435889f08ffaf9bf947a",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Size1-Regular.C195tn64.woff",
+    "sha256": "c943cc986384f59e86bea5fd7dc50a9c4dfe567a7c05eb40d6790720dead97c9",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Size1-Regular.Dbsnue_I.ttf",
+    "sha256": "95b6d2f1a50173bfedb8c63e1d1c99b10427d0a4df4201cb44513b226951a22b",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Size1-Regular.mCD8mA8B.woff2",
+    "sha256": "6b47c40166b6dbe21a5dfca7718413f2147fd2399be1ba605d8ad39cedf25dfe",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Size2-Regular.B7gKUWhC.ttf",
+    "sha256": "a6b2099fb555c60e3a0db3a08842ebf1d732c6eb4e4bf44913613bed4fc4e39b",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Size2-Regular.Dy4dx90m.woff2",
+    "sha256": "d04c54219f9eaec6d4d4fd42dfb28785975a4794d6b2fc71e566b9cd6db842dd",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Size2-Regular.oD1tc_U0.woff",
+    "sha256": "2014c523c3210bcc166648c4d4cc57f05b747df07a24277bf71c51e67dc79e3d",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Size3-Regular.CTq5MqoE.woff",
+    "sha256": "6ab6b62e9b62dae2c00dd90f791bd10950be0ecc3490d7d6045f51c2e8fe0949",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Size3-Regular.DgpXs0kz.ttf",
+    "sha256": "500e04d54f0d51666332c9d2089aa803be22aa878eca539e59fa53c6e522b082",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Size4-Regular.BF-4gkZK.woff",
+    "sha256": "99f9c6750b489c9462bf04900bd3f939df9b829339daaaaa99ef5495cdddea58",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Size4-Regular.DWFBv043.ttf",
+    "sha256": "c647367d1dd4e162468717d020e1fc0f1dc5c26ebfdffbe55261713bf88c5877",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Size4-Regular.Dl5lxZxV.woff2",
+    "sha256": "a4af7d414440a1c1790825cfb700cf9cf43b0f2c4b04f0ebc523011ad9853ec0",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Typewriter-Regular.C0xS9mPB.woff",
+    "sha256": "e14fed02b1aba7ce9f5afd5844b5d0321b22351febc720e0de8b8723527609f7",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Typewriter-Regular.CO6r4hn1.woff2",
+    "sha256": "71d517d67827787cfabdf186914cc3358eda539e37931941f2b2fd4a21f68c0b",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/KaTeX_Typewriter-Regular.D3Ib7_Hf.ttf",
+    "sha256": "f01f3e87d9c6a61c0c081ceb577abd864eb00a612f7ac1620dd6915fad2ef5aa",
+    "license": "MIT",
+    "evidence": "KaTeX entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/MaterialSymbols-Rounded.BqjyabP-.woff2",
+    "sha256": "dbc24e9d34eaefc23b5cb831988ed3e34fa13449363697879dfc267beed5f927",
+    "license": "Apache-2.0",
+    "evidence": "Material Icons entry in exact-release Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/SourceCodeVF-Italic.ttf.Ba1oaZG1.woff2",
+    "sha256": "720e47a2e54568db2908bfbb32894c1c298fd948cc8942426987c2d29f7ebd9e",
+    "license": "OFL-1.1",
+    "evidence": "Exact-release Source font license and Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/SourceCodeVF-Upright.ttf.BjWn63N-.woff2",
+    "sha256": "d95dc751b4d82141259f5c00c9838addaadd3b4eac30dd7db4a0da4921d77792",
+    "license": "OFL-1.1",
+    "evidence": "Exact-release Source font license and Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/SourceSansVF-Italic.ttf.Bt9VkdQ3.woff2",
+    "sha256": "b4959abc0569392f87c6c6ac612f90e3fe0104d283724189b7d8b6f61af347d3",
+    "license": "OFL-1.1",
+    "evidence": "Exact-release Source font license and Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/SourceSansVF-Upright.ttf.BsWL4Kly.woff2",
+    "sha256": "5f16566f7a40d39b339ad26be151fa5a1ab1f0c2574c7a2e619765584a1acbd8",
+    "license": "OFL-1.1",
+    "evidence": "Exact-release Source font license and Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/SourceSerifVariable-Italic.ttf.CVdzAtxO.woff2",
+    "sha256": "9d28b5749a1ad096a295cb607c521bd1af4cd9979b6f37332daf70143149fb44",
+    "license": "OFL-1.1",
+    "evidence": "Exact-release Source font license and Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/SourceSerifVariable-Roman.ttf.mdpVL9bi.woff2",
+    "sha256": "940a76eda1388de39d38c8e7a79bf6ea058a387faee0a9f33c8d25c6ba05e1be",
+    "license": "OFL-1.1",
+    "evidence": "Exact-release Source font license and Streamlit NOTICES",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/balloon-0.Czj7AKwE.png",
+    "sha256": "a46efdd79216954c7f9e70d75a62ca62ee67a532a9b044ea03432a5a372b396b",
+    "license": "Apache-2.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/balloon-1.CNvFFrND.png",
+    "sha256": "49693f2424ecc42af33f7462c1689f3c396bd94b74578c1f1ab598f5c5be46ba",
+    "license": "Apache-2.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/balloon-2.DTvC6B1t.png",
+    "sha256": "82cce62f6a160cff8446ebb965106ba7375408eedc320af377a2c18d6e3c2e46",
+    "license": "Apache-2.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/balloon-3.CgSk4tbL.png",
+    "sha256": "bdf4e628699b6428714e51c470cbe788a3e5c1af9735bd060e5ae66ba5efb256",
+    "license": "Apache-2.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/balloon-4.mbtFrzxf.png",
+    "sha256": "d1d2e0eeed565167f867f25d7ca42c8a6324dbcd5503333018e29052349d2e73",
+    "license": "Apache-2.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/balloon-5.CSwkUfRA.png",
+    "sha256": "aa4590966b89f503b89759fa91608ae71edfa56460c7ecf32f6d0c63cde36568",
+    "license": "Apache-2.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/fireworks.B4d-_KUe.gif",
+    "sha256": "64ed55f1c8f15df3c664c45a2085a6e2df34bef7982d9df399a590391a50d338",
+    "license": "Apache-2.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/flake-0.DgWaVvm5.png",
+    "sha256": "9b0a7fd5983ad5c649ee38288857eb9276a420603f87822423c686c5733423fd",
+    "license": "Apache-2.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/flake-1.B2r5AHMK.png",
+    "sha256": "860d955fa3bdae67d045b8f1443150107d6ce039c8354f755cfa87663836a394",
+    "license": "Apache-2.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/flake-2.BnWSExPC.png",
+    "sha256": "362f9c20f89ed59fb4189a01a116afc87e3f22d7fe8c253eb77dc3fc924028f4",
+    "license": "Apache-2.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "streamlit",
+    "version": "1.61.1",
+    "file": "streamlit/static/static/media/snowflake.JU2jBHL8.svg",
+    "sha256": "4a87bc72191ab1a5e1c4c60e6a43005d1475044bb65e9d36868b19ad25c5ea57",
+    "license": "Apache-2.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://streamlit.io"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/_core/tests/data/umath-validation-set-arccos.csv",
+    "sha256": "c81973f2be919e701885d9686f3186a3614a63e0e849341a3f6eb2f35dfc6b72",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/_core/tests/data/umath-validation-set-arccosh.csv",
+    "sha256": "d065deed71b56778d701c2be3a5128b7f0dfdcc7ad0d04a56e6dcc27ffe23109",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/_core/tests/data/umath-validation-set-arcsin.csv",
+    "sha256": "c3f4afd8d0e7fa62d9480a9be7a253da0e1ba81cf16008a179d5b11ee7fcdae5",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/_core/tests/data/umath-validation-set-arcsinh.csv",
+    "sha256": "0d9acc6286596723350c3c97354c52973c7a6ce81a8e74522d6033c5c3dc93c9",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/_core/tests/data/umath-validation-set-arctan.csv",
+    "sha256": "d1aa2c5d9fbd0d84e8a74963e1b7dc04dc1856f8d9756d7785b3114d1453995d",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/_core/tests/data/umath-validation-set-arctanh.csv",
+    "sha256": "1c42bd78fc753a42ab5c82a4314574231ae6b03a8896029d76223e2ef176276d",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/_core/tests/data/umath-validation-set-cbrt.csv",
+    "sha256": "bfce7931366287e7d9a7f1ae103b2ddaa688b315386bbbe501b788272db12a97",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/_core/tests/data/umath-validation-set-cos.csv",
+    "sha256": "d0f3670ea2a4a2467b11154381b7acf0a35973e21226b65495565ce4b916d7c1",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/_core/tests/data/umath-validation-set-cosh.csv",
+    "sha256": "24a0b89caaf7c13cc0fd7352890bd552af73918cb8763bedbb6fa3e1967fece7",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/_core/tests/data/umath-validation-set-exp.csv",
+    "sha256": "ad401621bbf278a87dacf7e9da7d19abb00aabf9ef1e981b8332e3025961b1e9",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/_core/tests/data/umath-validation-set-exp2.csv",
+    "sha256": "763a2c4feddf4e988dfdfff658eba680cbae2a00bf5e1a553be42c505c08eae5",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/_core/tests/data/umath-validation-set-expm1.csv",
+    "sha256": "2bb8cbe8de0a4065fbd5f8f986f624cdc31793b32641eb3c170acd7f2acfa605",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/_core/tests/data/umath-validation-set-log.csv",
+    "sha256": "ca7cdb55b2b1173c56170c479f15fb1699bebdad3da08de82b5fe54ded7d838c",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/_core/tests/data/umath-validation-set-log10.csv",
+    "sha256": "34e043fab39623f14f1b85666f3bb726d5fd500f37f1fd80683140fb06a2a860",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/_core/tests/data/umath-validation-set-log1p.csv",
+    "sha256": "b5d6d858fa96233f0111b232925ca787fb69409ce8f7bd0475de1e93a0ec3dbf",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/_core/tests/data/umath-validation-set-log2.csv",
+    "sha256": "dfd1140f4bc531bc32a17a0e8600a689de8d78401053b15fed01633ec54e6c81",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/_core/tests/data/umath-validation-set-sin.csv",
+    "sha256": "f0f5239d0fd87e6c456f8d9726bbe9be691e4a910e9445d298dbc82b85607c03",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/_core/tests/data/umath-validation-set-sinh.csv",
+    "sha256": "5ceb0152e3dc32388efe97af31a96999dd2246fda09a787dbbb6d5f592cb83c2",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/_core/tests/data/umath-validation-set-tan.csv",
+    "sha256": "1efd9650c22c71fbd0279639062a6e1e4e28138558e9029b429fe4351742a984",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/_core/tests/data/umath-validation-set-tanh.csv",
+    "sha256": "8a895917f30ec964606126be4ac0f875fe669f214ad7cceb20223be34496a137",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/lib/tests/data/py2-objarr.npz",
+    "sha256": "c68d771c14f415b159daabd9cf42d61836f74ae40049269787baca7d57098f1e",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/lib/tests/data/py3-objarr.npz",
+    "sha256": "bd5465f7f359effabe86376e52bf185a7cd1cbc1123659af30f95a4920baf5f9",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/random/tests/data/mt19937-testset-1.csv",
+    "sha256": "5e479fe34d80541f9e660610915b68c444479317df080f49cadfe831bb491b06",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/random/tests/data/mt19937-testset-2.csv",
+    "sha256": "9ec04440d9df7fe6858c760ae2d863bd42b8c525c349fbf96936dc139f693a41",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/random/tests/data/pcg64-testset-1.csv",
+    "sha256": "c41d340e99271944d30b10ebf4be9a368f47b3eb1fcc431b5124b8b75d534df1",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/random/tests/data/pcg64-testset-2.csv",
+    "sha256": "3537734cabc6d94eff5b253f228414b4ccd4de412f0c7dfd0a09d1e95ce14e4c",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/random/tests/data/pcg64dxsm-testset-1.csv",
+    "sha256": "bcd4944fe8174bfa04c3f6b04773b7d338953b8b1e34f52fd54219d3549f5672",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/random/tests/data/pcg64dxsm-testset-2.csv",
+    "sha256": "bb2952f0f536008299d7ce4e0b4e1106bfce78fc1e191b6f9fe744e18374c980",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/random/tests/data/philox-testset-1.csv",
+    "sha256": "49e751688cb9cc569d9a4ef59caac6c42159e81c0acfc83503df8e669dc89246",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/random/tests/data/philox-testset-2.csv",
+    "sha256": "756102b7eb1b7ef69288af3e620a7902aca3a0de62dba5443ab5ea834d6b9378",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/random/tests/data/sfc64-testset-1.csv",
+    "sha256": "887b3a897e8a47c6f11b02a4fb7b5e74074c3f3e995bcb250d25040a402a0bc4",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  },
+  {
+    "package": "numpy",
+    "version": "2.5.2",
+    "file": "numpy/random/tests/data/sfc64-testset-2.csv",
+    "sha256": "1480c80c509a3d97d6512c6c24c01ee7c84f36632b536ee409df45842118b7f9",
+    "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "evidence": "Parent distribution license; no distinct license asserted",
+    "source": "https://numpy.org"
+  }
+]
