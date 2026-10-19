@@ -152,6 +152,10 @@ def load_difficulty_tiers(client, url):
             difficulty_val = float(row[1].strip())
             parsed_rows.append((sqft_threshold, difficulty_val))
             
+        if not parsed_rows or parsed_rows[0][0] < 0 or any(
+                not pd.notna(threshold) or not pd.notna(value) or value <= 0
+                for threshold, value in parsed_rows):
+            raise ValueError("Empty or invalid difficulty configuration")
         parsed_rows.sort(key=lambda x: x[0])
         
         tiers = []
@@ -499,6 +503,39 @@ def load_and_parse_schedule(file_id, drive_service):
     arch_idx, floor_idx, truss_idx = find_date_column_indices(schedule_data)
     return schedule_data, arch_idx, floor_idx, truss_idx
 
+def derive_start_dates(items):
+    """Derive receipts for models; blocks wait for every model in parent scope.
+
+    Block rows need architecture/truss receipts; the constituent model rows
+    supply floor receipt requirements. Dates remain blank while any are missing.
+    """
+    models = [item for item in items if not item["is_block"]]
+    for item in items:
+        item["final_start_date"] = ""
+        required = [item["arch_dt"], item["truss_dt"]]
+        if not item["is_block"]:
+            required.append(item["floor_dt"])
+        if all(required):
+            item["final_start_date"] = (max(required) + timedelta(days=1)).isoformat()
+    for item in items:
+        if item["is_block"] and item["final_start_date"]:
+            if any(not model["final_start_date"] for model in models):
+                item["final_start_date"] = ""
+            else:
+                item["final_start_date"] = max(
+                    [item["final_start_date"]] + [m["final_start_date"] for m in models])
+
+
+def reindex_children(children, deleted):
+    """Keep live sheet coordinates valid after descending row deletions."""
+    return {key: (row - sum(d < row for d in deleted), name)
+            for key, (row, name) in children.items() if row not in deleted}
+
+
+def matches_numbered_target(model_name, kind, number):
+    """Match full block/lot numbers, including zero-padded workbook labels."""
+    return bool(re.search(rf"(?<![A-Z0-9]){re.escape(kind)}[\W_]*0*{number}(?![A-Z0-9])", model_name.upper()))
+
 def compute_matched_model_names(task_name, schedule_data):
     """
     Returns the set of model output names (uppercase) that a parent task row matches
@@ -541,12 +578,12 @@ def compute_matched_model_names(task_name, schedule_data):
                 break
         if not is_match:
             for ab in allowed_blocks:
-                if ab in model_upper or re.sub(r'[^A-Z0-9]', '', ab) in norm_model_cell:
+                if matches_numbered_target(model_upper, 'BLOCK', int(ab.split()[-1])):
                     is_match = True
                     break
         if not is_match:
             for al_num in allowed_lots:
-                if f"LOT {al_num}" in model_upper or f"LOT0{al_num}" in model_upper or f"LOT {al_num})" in model_upper:
+                if matches_numbered_target(model_upper, 'LOT', al_num):
                     is_match = True
                     break
         if is_match:
@@ -618,7 +655,7 @@ def main():
         all_log_rows = log_sheet.get_all_values()
         sheet1_purge_indices = []
         for r_idx, r_data in enumerate(all_log_rows):
-            if len(r_data) > 2:
+            if r_idx > 0 and len(r_data) > 2:
                 model_col_text = re.sub(r'[^A-Z]', '', r_data[2].strip().upper())
                 if model_col_text == "MODEL":
                     sheet1_purge_indices.append(r_idx + 1)
@@ -688,7 +725,9 @@ def main():
             print(f" -> Found {len(conflicted_projects)} project code(s) with multiple parent tasks. Resolving model ownership...")
             for _pc in conflicted_projects:
                 _entries = project_code_rows[_pc]
-                _entries.sort(key=lambda e: (clean_and_parse_date(e[1]) or datetime.min.date()), reverse=True)
+                _entries.sort(key=lambda e: (clean_and_parse_date(e[1]) or datetime.min.date(),
+                                               e[3][13] if len(e[3]) > 13 else "",
+                                               tuple(e[3])), reverse=True)
                 _fid = _entries[0][2]
                 if _fid not in schedule_data_cache:
                     try:
@@ -759,6 +798,7 @@ def main():
                 
             # existing_children: cleaned_key -> (sheet1_row_num, original_model_name)
             existing_children = {}
+            original_child_rows = {}
             scan_idx = idx + 1
             while scan_idx < len(all_log_rows):
                 scan_row = all_log_rows[scan_idx]
@@ -768,6 +808,7 @@ def main():
                     raw_model_name = scan_row[2].strip().upper()
                     cleaned_key = re.sub(r'[^A-Z0-9]', '', raw_model_name)
                     existing_children[cleaned_key] = (scan_idx + 1, raw_model_name)
+                    original_child_rows[cleaned_key] = scan_row
                 scan_idx += 1
 
             try:
@@ -821,14 +862,14 @@ def main():
                                     
                     if not is_match:
                         for ab in allowed_blocks:
-                            if ab in model_upper or re.sub(r'[^A-Z0-9]', '', ab) in norm_model_cell:
+                            if matches_numbered_target(model_upper, 'BLOCK', int(ab.split()[-1])):
                                 is_match = True
                                 is_block = True
                                 break
                                 
                     if not is_match:
                         for al_num in allowed_lots:
-                            if f"LOT {al_num}" in model_upper or f"LOT0{al_num}" in model_upper or f"LOT {al_num})" in model_upper:
+                            if matches_numbered_target(model_upper, 'LOT', al_num):
                                 is_match = True
                                 break
                                 
@@ -879,23 +920,9 @@ def main():
                     sheet2_dirty = True
                     sheet3_dirty = True
                     batch_delete_rows(log_sheet, scope_removed_sh1_rows)
+                    existing_children = reindex_children(existing_children, scope_removed_sh1_rows)
 
-                valid_model_dates = []
-                for item in subtask_compiled_matches:
-                    if not item["is_block"]:
-                        if item["arch_dt"] and item["floor_dt"] and item["truss_dt"]:
-                            calc_date = max(item["arch_dt"], item["floor_dt"], item["truss_dt"]) + timedelta(days=1)
-                            item["final_start_date"] = calc_date.strftime("%Y-%m-%d")
-                            valid_model_dates.append(calc_date)
-
-                max_subtask_model_date = max(valid_model_dates) if valid_model_dates else None
-
-                for item in subtask_compiled_matches:
-                    if item["is_block"]:
-                        if item["arch_dt"] and item["truss_dt"]:
-                            block_base_date = max(item["arch_dt"], item["truss_dt"]) + timedelta(days=1)
-                            final_block_date = max_subtask_model_date if max_subtask_model_date and max_subtask_model_date > block_base_date else block_base_date
-                            item["final_start_date"] = final_block_date.strftime("%Y-%m-%d")
+                derive_start_dates(subtask_compiled_matches)
 
                 new_rows_to_insert = []
                 project_sheet_updates = []
@@ -913,9 +940,7 @@ def main():
                     if blacklisted_sh1_rows:
                         print(f"     [x] Removing {len(blacklisted_sh1_rows)} blacklisted child row(s) from Sheet 1...")
                         batch_delete_rows(log_sheet, blacklisted_sh1_rows)
-                        blacklisted_row_set = set(blacklisted_sh1_rows)
-                        existing_children = {ck: v for ck, v in existing_children.items()
-                                             if v[0] not in blacklisted_row_set}
+                        existing_children = reindex_children(existing_children, blacklisted_sh1_rows)
 
                 for item in subtask_compiled_matches:
                     model_output = item["model_output"]
@@ -955,13 +980,13 @@ def main():
                     model_lookup_key = re.sub(r'[^A-Z0-9]', '', model_output.upper())
                     if model_lookup_key in existing_children:
                         live_row_num, _ = existing_children[model_lookup_key]
-                        orig_child_row = all_log_rows[live_row_num - 1]
+                        orig_child_row = original_child_rows[model_lookup_key]
                         
                         current_el = orig_child_row[3].strip() if len(orig_child_row) > 3 else ""
                         current_sq = orig_child_row[4].strip() if len(orig_child_row) > 4 else ""
                         current_diff = orig_child_row[5].strip() if len(orig_child_row) > 5 else ""
                         current_h = orig_child_row[7].strip() if len(orig_child_row) > 7 else ""     
-                        current_j = orig_child_row[8].strip() if len(orig_child_row) > 8 else ""     
+                        current_j = orig_child_row[9].strip() if len(orig_child_row) > 9 else ""
                         current_k = orig_child_row[10].strip() if len(orig_child_row) > 10 else ""   
                         
                         if (current_el != str(item["num_elevations"]) or current_sq != str(item["sq_ft_output"]) or 

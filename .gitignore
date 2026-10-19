@@ -41,3 +41,14 @@ ENV/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Local dependencies, private configuration, and audit/recording caches
+node_modules/
+.env
+.env.*
+!.env.example
+!.env.sample
+.runtime/
+recordings/
+dist/
+build/

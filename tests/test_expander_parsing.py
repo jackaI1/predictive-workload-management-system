@@ -192,3 +192,29 @@ def test_and_combines_with_ranges():
 def test_plural_lots_keyword_is_matched():
     _, _, _, lots = extract_allowed_targets("D12345 LOTS 5")
     assert lots == {5}
+
+
+def test_block_and_lot_selection_never_matches_number_prefixes():
+    from expander import compute_matched_model_names
+    schedule = [['', '', 'MODEL', '', ''], ['', '', '', '', '']]
+    schedule += [['', '', name, 'A', '1000'] for name in
+                 ('BLOCK 1', 'BLOCK 10', 'LOT 5', 'LOT 50', 'LOT05')]
+    assert compute_matched_model_names('D12345 BLOCK 1', schedule) == {'BLOCK 1'}
+    assert compute_matched_model_names('D12345 LOT 5', schedule) == {'LOT 5', 'LOT05'}
+
+
+def test_parenthesized_plural_model_ranges_match_schedule_rows():
+    from expander import compute_matched_model_names
+    schedule = [['', '', 'MODEL', '', ''], ['', '', '', '', '']]
+    schedule += [['', '', f'BB{i}', 'A', '1000'] for i in range(1, 10)]
+    assert compute_matched_model_names('D12345 BBs (1, to 4, 6 to 8)', schedule) == {
+        'BB1', 'BB2', 'BB3', 'BB4', 'BB6', 'BB7', 'BB8'}
+
+
+def test_numbered_workbook_labels_keep_punctuation_support():
+    from expander import compute_matched_model_names
+    names = ['BLOCK-1', 'BLOCK_1', 'BLOCK01', 'BLOCK 10', 'LOT-5', 'LOT_05', 'LOT50']
+    schedule = [['', '', 'MODEL', '', ''], ['', '', '', '', '']]
+    schedule += [['', '', name, 'A', '1000'] for name in names]
+    assert compute_matched_model_names('D12345 BLOCK 1', schedule) == set(names[:3])
+    assert compute_matched_model_names('D12345 LOT 5', schedule) == {'LOT-5', 'LOT_05'}

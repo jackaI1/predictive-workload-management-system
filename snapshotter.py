@@ -38,9 +38,9 @@ EASTERN = ZoneInfo("America/New_York")
 
 # --- DATABASE AND API CONFIGURATION ---
 CLICKUP_TOKEN = os.environ.get("CLICKUP_TOKEN")
-LIST_ID = "your-clickup-list-id-here"
-PROGRESSION_STATUS_FIELD_ID = "your-custom-field-id-here"
-GOOGLE_SHEET_URL = "https://docs.google.com/spreadsheets/d/your-google-sheet-id-here/edit"
+LIST_ID = os.environ.get("LIST_ID", "your-clickup-list-id-here")
+PROGRESSION_STATUS_FIELD_ID = os.environ.get("PROGRESSION_STATUS_FIELD_ID", "your-custom-field-id-here")
+GOOGLE_SHEET_URL = os.environ.get("GOOGLE_SHEET_URL", "https://docs.google.com/spreadsheets/d/your-google-sheet-id-here/edit")
 
 def get_google_sheet_client():
     """

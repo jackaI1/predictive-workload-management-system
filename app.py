@@ -29,6 +29,7 @@ import hmac
 import random
 import datetime
 import streamlit as st
+from streamlit.errors import StreamlitSecretNotFoundError
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
@@ -45,8 +46,8 @@ DEMO_MODE = os.environ.get("WORKLOAD_DEMO", "").strip().lower() in ("1", "true",
 
 st.markdown("""
     <style>
-    #MainMenu {visibility: hidden;} footer {visibility: hidden;} header {visibility: hidden;}
-    div[data-testid="stToolbar"] {visibility: hidden;}
+    #MainMenu {visibility: hidden;} footer {visibility: hidden;}
+    div[data-testid="stToolbarActions"], div[data-testid="stAppDeployButton"] {visibility: hidden;}
     /* Tighten up radio button row spacing */
     div[data-testid="stHorizontalBlock"] > div { gap: 0.25rem; }
     /* Small top gap — ensures the Plotly toolbar isn't clipped by the iframe edge */
@@ -73,7 +74,10 @@ else:
     #   - No URL-parameter path. A password passed as ?pwd=... is written to
     #     browser history, proxy and server access logs, and the Referer header
     #     of every outbound link, so it leaks to places the user never sees.
-    secret_password = st.secrets.get("DASHBOARD_PASSWORD")
+    try:
+        secret_password = st.secrets.get("DASHBOARD_PASSWORD")
+    except StreamlitSecretNotFoundError:
+        secret_password = None
 
     if not secret_password:
         st.error("DASHBOARD_PASSWORD is not set. Add it to .streamlit/secrets.toml.")
@@ -84,7 +88,7 @@ if not st.session_state["authenticated"]:
     user_input = st.text_input("Enter Access Password:", type="password")
     # Constant-time comparison: a plain == returns as soon as two characters
     # differ, so response timing leaks how much of the password was correct.
-    if user_input and hmac.compare_digest(user_input, secret_password):
+    if user_input and hmac.compare_digest(user_input.encode('utf-8'), secret_password.encode('utf-8')):
         st.session_state["authenticated"] = True
         st.rerun()
     else:
@@ -99,6 +103,14 @@ if DEMO_MODE:
         "client or firm data is loaded, and no credentials are used.",
         icon="🧪",
     )
+
+# The scenario planner is local and explicitly synthetic, independent of Sheets.
+page = st.sidebar.radio('Dashboard', ['Forecast', 'KPI history'],
+                        index=0 if DEMO_MODE else 1, key='dashboard_page')
+if page == 'Forecast':
+    from planner_ui import render_planner
+    render_planner()
+    st.stop()
 
 # --- 3. DATA FETCHING & CACHING ---
 def _demo_frames():
@@ -157,7 +169,7 @@ def load_data():
         st.error("Missing Google Credentials.")
         st.stop()
     client = gspread.authorize(creds)
-    SHEET_URL = "https://docs.google.com/spreadsheets/d/your-google-sheet-id-here/edit"
+    SHEET_URL = os.environ.get("GOOGLE_SHEET_URL", "https://docs.google.com/spreadsheets/d/your-google-sheet-id-here/edit")
     
     # Extract Tab 2 (Weighted Difficulty KPI Framework)
     sheet2 = client.open_by_url(SHEET_URL).worksheets()[1]
