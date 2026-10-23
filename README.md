@@ -198,6 +198,10 @@ ADAPTING.md                  deployment and domain adaptation notes
 
 ## License
 
+Developed at D.L. Engineering Inc. and published with the firm's written
+permission. Client information, firm documents, internal resource identifiers and
+proprietary data are excluded.
+
 Original project source is MIT; see [`LICENSE`](LICENSE). Dependency terms,
 including certifi's MPL-2.0 and the Streamlit font licences, are recorded in
 [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md); MIT does not replace them.
