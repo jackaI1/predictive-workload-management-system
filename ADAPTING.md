@@ -6,7 +6,7 @@ what is not is more useful than pretending it is a framework. Three tiers, from
 
 ---
 
-## Tier 1 — configuration, no code change
+## Tier 1: configuration, no code change
 
 Every resource identifier is read from an environment variable with an
 obviously-fake default. Nothing needs editing to point the tool at your own
@@ -25,7 +25,7 @@ the sheet at `DIFFICULTY_LOOKUP_URL` at runtime, as `(threshold, difficulty)`
 rows. Retuning how work is scored means editing a spreadsheet, not deploying.
 If that sheet is unreachable the documented fallback tiers are used.
 
-## Tier 2 — one named constant
+## Tier 2: one named constant
 
 The vocabulary of the domain is declared in one block at the top of
 `expander.py` and referenced everywhere else:
@@ -37,8 +37,8 @@ UNIT_KEYWORDS = r"LOT|LTS|LOTS"           # an individual unit inside a group
 LIST_CHARS = r"[\d\s,&\-TOANDtoand]+"     # what can appear inside a number list
 ```
 
-The structure this encodes — *a job identifier, groups, and units inside those
-groups* — is not specific to construction. A print shop has jobs, runs and
+The structure this encodes (*a job identifier, groups, and units inside those
+groups*) is not specific to construction. A print shop has jobs, runs and
 copies. A lab has studies, batches and samples. A field service team has
 contracts, sites and assets.
 
@@ -57,16 +57,16 @@ reasonable safety net while you change these.
 
 **What you will also want to change:** `allowed_blocks` is populated as
 `f"BLOCK {num}"`, so the emitted label still says BLOCK. Change that f-string to
-match your vocabulary — it is one line, in `extract_allowed_targets`.
+match your vocabulary; it is one line, in `extract_allowed_targets`.
 
-## Tier 3 — needs a new module
+## Tier 3: needs a new module
 
 These are genuinely coupled and there is no configuration that will save you.
 
 ### The tracker
 
-`ClickUpQA.py` and `snapshotter.py` call the ClickUp REST API directly — task
-retrieval, custom fields, subtask creation, doc creation. Swapping to Jira,
+`ClickUpQA.py` and `snapshotter.py` call the ClickUp REST API directly for task
+retrieval, custom fields, subtask creation and doc creation. Swapping to Jira,
 Linear or Asana means writing a replacement for the request layer. What is worth
 keeping is the shape around it: `clickup_request()` wraps every call in
 exponential backoff with jitter over the retryable status codes, and every
@@ -94,7 +94,7 @@ unchanged.
 
 `parse_sq_ft_and_difficulty()` is a tiered lookup on one quantity plus a linear
 bonus on a second. If your work is not sized by area, this is the function to
-replace — it is 30 lines, pure, and has a single call site.
+replace: it is 30 lines, pure, and has a single call site.
 
 The design choice worth preserving: it is *explainable*. Anyone whose work is
 being scheduled by it can be shown why their job scored what it scored. A fitted
