@@ -217,8 +217,8 @@ def main():
                     if not progression_status:
                         progression_status = str(val).upper().strip()
 
-        # Filtering Condition: Check native status, custom field status, AND the D###### project prefix
-        if progression_status == "FIRST MARKUP" and native_status == "TIMELINE" and re.match(r'^D\d{6}', name):
+        # Filtering Condition: Check native status, custom field status, AND the P###### project prefix
+        if progression_status == "FIRST MARKUP" and native_status == "TIMELINE" and re.match(r'^P\d{6}', name):
             page_num = task.get("_page", "?")
             print(f" [✓] MATCH (page {page_num}): '{name}' (ID: {task_id})")
 
@@ -258,7 +258,7 @@ def main():
                 "due_date":   due_date_str
             }
 
-    print(f" -> Found {len(active_first_markup_tasks)} items matching [Status: TIMELINE], [Progression: FIRST MARKUP], and [Naming Code: D######].")
+    print(f" -> Found {len(active_first_markup_tasks)} items matching [Status: TIMELINE], [Progression: FIRST MARKUP], and [Naming Code: P######].")
 
     # Open the master log spreadsheet and cache all row data before initiating any sheet mutations.
     print("\n[Connecting to Google Sheets]")

@@ -118,40 +118,40 @@ def test_returns_nothing_without_a_project_code():
 
 
 def test_extracts_the_project_code():
-    project, _, _, _ = extract_allowed_targets("D12345 BLOCK 1")
-    assert project == "D12345"
+    project, _, _, _ = extract_allowed_targets("P12345 BLOCK 1")
+    assert project == "P12345"
 
 
 def test_accepts_a_six_digit_project_code():
-    project, _, _, _ = extract_allowed_targets("D123456 BLOCK 1")
-    assert project == "D123456"
+    project, _, _, _ = extract_allowed_targets("P123456 BLOCK 1")
+    assert project == "P123456"
 
 
 def test_expands_a_block_range():
-    _, _, blocks, _ = extract_allowed_targets("D12345 BLOCK 1 TO 3")
+    _, _, blocks, _ = extract_allowed_targets("P12345 BLOCK 1 TO 3")
     assert blocks == {"BLOCK 1", "BLOCK 2", "BLOCK 3"}
 
 
 def test_accepts_the_blk_abbreviation():
-    _, _, blocks, _ = extract_allowed_targets("D12345 BLK 2")
+    _, _, blocks, _ = extract_allowed_targets("P12345 BLK 2")
     assert "BLOCK 2" in blocks
 
 
 def test_extracts_lots_separately_from_blocks():
-    _, _, blocks, lots = extract_allowed_targets("D12345 LOT 5, 7")
+    _, _, blocks, lots = extract_allowed_targets("P12345 LOT 5, 7")
     assert lots == {5, 7}
     assert blocks == set()
 
 
 def test_review_suffix_is_trimmed_before_parsing():
     """'2ND REVIEW' is workflow metadata, not a target specification."""
-    _, _, blocks_plain, _ = extract_allowed_targets("D12345 BLOCK 2")
-    _, _, blocks_review, _ = extract_allowed_targets("D12345 BLOCK 2 2ND REVIEW")
+    _, _, blocks_plain, _ = extract_allowed_targets("P12345 BLOCK 2")
+    _, _, blocks_review, _ = extract_allowed_targets("P12345 BLOCK 2 2ND REVIEW")
     assert blocks_review == blocks_plain
 
 
 def test_block_numbers_are_not_also_read_as_lots():
-    _, _, blocks, lots = extract_allowed_targets("D12345 BLOCK 4")
+    _, _, blocks, lots = extract_allowed_targets("P12345 BLOCK 4")
     assert "BLOCK 4" in blocks
     assert 4 not in lots
 
@@ -164,33 +164,33 @@ def test_block_numbers_are_not_also_read_as_lots():
 # --------------------------------------------------------------------------
 
 def test_and_is_recognised_between_lots():
-    _, _, _, lots = extract_allowed_targets("D12345 LOT 5, 7 AND 9")
+    _, _, _, lots = extract_allowed_targets("P12345 LOT 5, 7 AND 9")
     assert lots == {5, 7, 9}
 
 
 def test_and_is_recognised_between_blocks():
-    _, _, blocks, _ = extract_allowed_targets("D12345 BLOCK 1 AND 3")
+    _, _, blocks, _ = extract_allowed_targets("P12345 BLOCK 1 AND 3")
     assert blocks == {"BLOCK 1", "BLOCK 3"}
 
 
 def test_ampersand_is_recognised():
-    _, _, _, lots = extract_allowed_targets("D12345 LOT 5 & 7")
+    _, _, _, lots = extract_allowed_targets("P12345 LOT 5 & 7")
     assert lots == {5, 7}
 
 
 def test_and_joining_a_block_to_a_lot_keeps_them_separate():
-    _, _, blocks, lots = extract_allowed_targets("D12345 BLOCK 2 AND LOT 5")
+    _, _, blocks, lots = extract_allowed_targets("P12345 BLOCK 2 AND LOT 5")
     assert blocks == {"BLOCK 2"}
     assert lots == {5}
 
 
 def test_and_combines_with_ranges():
-    _, _, _, lots = extract_allowed_targets("D12345 LOT 1 TO 3 AND 9")
+    _, _, _, lots = extract_allowed_targets("P12345 LOT 1 TO 3 AND 9")
     assert lots == {1, 2, 3, 9}
 
 
 def test_plural_lots_keyword_is_matched():
-    _, _, _, lots = extract_allowed_targets("D12345 LOTS 5")
+    _, _, _, lots = extract_allowed_targets("P12345 LOTS 5")
     assert lots == {5}
 
 
@@ -199,15 +199,15 @@ def test_block_and_lot_selection_never_matches_number_prefixes():
     schedule = [['', '', 'MODEL', '', ''], ['', '', '', '', '']]
     schedule += [['', '', name, 'A', '1000'] for name in
                  ('BLOCK 1', 'BLOCK 10', 'LOT 5', 'LOT 50', 'LOT05')]
-    assert compute_matched_model_names('D12345 BLOCK 1', schedule) == {'BLOCK 1'}
-    assert compute_matched_model_names('D12345 LOT 5', schedule) == {'LOT 5', 'LOT05'}
+    assert compute_matched_model_names('P12345 BLOCK 1', schedule) == {'BLOCK 1'}
+    assert compute_matched_model_names('P12345 LOT 5', schedule) == {'LOT 5', 'LOT05'}
 
 
 def test_parenthesized_plural_model_ranges_match_schedule_rows():
     from expander import compute_matched_model_names
     schedule = [['', '', 'MODEL', '', ''], ['', '', '', '', '']]
     schedule += [['', '', f'BB{i}', 'A', '1000'] for i in range(1, 10)]
-    assert compute_matched_model_names('D12345 BBs (1, to 4, 6 to 8)', schedule) == {
+    assert compute_matched_model_names('P12345 BBs (1, to 4, 6 to 8)', schedule) == {
         'BB1', 'BB2', 'BB3', 'BB4', 'BB6', 'BB7', 'BB8'}
 
 
@@ -216,5 +216,5 @@ def test_numbered_workbook_labels_keep_punctuation_support():
     names = ['BLOCK-1', 'BLOCK_1', 'BLOCK01', 'BLOCK 10', 'LOT-5', 'LOT_05', 'LOT50']
     schedule = [['', '', 'MODEL', '', ''], ['', '', '', '', '']]
     schedule += [['', '', name, 'A', '1000'] for name in names]
-    assert compute_matched_model_names('D12345 BLOCK 1', schedule) == set(names[:3])
-    assert compute_matched_model_names('D12345 LOT 5', schedule) == {'LOT-5', 'LOT_05'}
+    assert compute_matched_model_names('P12345 BLOCK 1', schedule) == set(names[:3])
+    assert compute_matched_model_names('P12345 LOT 5', schedule) == {'LOT-5', 'LOT_05'}

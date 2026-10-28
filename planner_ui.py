@@ -14,11 +14,11 @@ def generated_scenario(today):
          'Architecture received': received, 'Floor received': floor,
          'Truss received': received, 'Predecessor': predecessor}
         for project, name, duration, difficulty, priority, floor, predecessor in [
-            ('D12345', 'AA1', 3, 1.2, 1, received, ''),
-            ('D12345', 'AA2', 3, 1.6, 2, received, 'D12345/AA1'),
-            ('D12345', 'AA3', 3, 2.0, 3, received, 'D12345/AA2'),
-            ('D12345', 'BLOCK 1', 2, 1.0, 4, None, 'D12345/AA3'),
-            ('D12346', 'BB1', 2, 1.4, 2, received, ''),
+            ('P12345', 'AA1', 3, 1.2, 1, received, ''),
+            ('P12345', 'AA2', 3, 1.6, 2, received, 'P12345/AA1'),
+            ('P12345', 'AA3', 3, 2.0, 3, received, 'P12345/AA2'),
+            ('P12345', 'BLOCK 1', 2, 1.0, 4, None, 'P12345/AA3'),
+            ('P12346', 'BB1', 2, 1.4, 2, received, ''),
         ]
     ])
 
@@ -72,7 +72,7 @@ def render_planner():
             st.session_state.scenario_current = base.copy()
             st.session_state.pop('scenario_editor', None)
         st.caption('Scenario changes last for this browser session; no tracker or sheet is modified.')
-    title = st.text_input('Task title to parse', value='D12345 AA1 TO 3 AND BLOCK 1', key='scope_title')
+    title = st.text_input('Task title to parse', value='P12345 AA1 TO 3 AND BLOCK 1', key='scope_title')
     forecast_tab, edit_tab, rules_tab = st.tabs(['Forecast', 'Edit scenario', 'How it works'])
     with edit_tab:
         st.caption('Predecessors use PROJECT/TASK; separate multiple predecessors with commas. Clear a receipt to mark it missing.')

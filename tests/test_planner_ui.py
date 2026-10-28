@@ -25,14 +25,14 @@ def test_demo_opens_forecast_and_updates_receipts_allocation_and_scope(monkeypat
     assert not app.exception
     assert any(t.value == 'Workload forecast' for t in app.title)
     assert [m.value for m in app.metric][:3] == ['4', '1', '1']
-    app.selectbox(key='explain_task').set_value('D12345/BLOCK 1').run()
+    app.selectbox(key='explain_task').set_value('P12345/BLOCK 1').run()
     assert any('Missing information: Floor' in e.value for e in app.info)
     app.button(key='fill_receipt').click().run()
     assert not app.exception
     assert app.metric[2].value == '0'
     app.radio(key='allocation_method').set_value('Equal per task').run()
     assert not app.exception
-    app.text_input(key='scope_title').set_value('D12345 AA1 TO 3').run()
+    app.text_input(key='scope_title').set_value('P12345 AA1 TO 3').run()
     assert app.metric[0].value == '3'
     app.text_input(key='scope_title').set_value('no project').run()
     assert app.metric[0].value == '0'

@@ -53,10 +53,10 @@ DIFFICULTY_LOOKUP_URL = os.environ.get(
 
 # --- DOMAIN VOCABULARY -------------------------------------------------------
 # This pipeline was built for residential structural projects, where a task
-# title reads like "D10001 BLOCK 1 TO 3, 5". The patterns below are the only
+# title reads like "P10001 BLOCK 1 TO 3, 5". The patterns below are the only
 # place that vocabulary is encoded: change them and the rest of the extraction
 # follows. ADAPTING.md walks through swapping them for a different domain.
-PROJECT_CODE_PATTERN = r"(D\d{5,6})"      # job identifier, e.g. D10001
+PROJECT_CODE_PATTERN = r"(P\d{5,6})"      # job identifier, e.g. P10001
 GROUP_KEYWORDS = r"BLOCK|BLK\.?"          # a cluster of units sharing drawings
 UNIT_KEYWORDS = r"LOT|LTS|LOTS"           # an individual unit inside a group
 

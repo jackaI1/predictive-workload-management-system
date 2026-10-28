@@ -23,10 +23,10 @@ from expander import (  # noqa: E402  (path setup must precede the import)
 )
 
 SAMPLE_TITLES = [
-    "D10001 BLOCK 1 TO 3",
-    "D10002 LOT 5, 7",
-    "D10003 BLK 2 2ND REVIEW",
-    "D10004 BLOCK 1, TO 4, 6 TO 8",
+    "P10001 BLOCK 1 TO 3",
+    "P10002 LOT 5, 7",
+    "P10003 BLK 2 2ND REVIEW",
+    "P10004 BLOCK 1, TO 4, 6 TO 8",
     "a title with no project code",
 ]
 

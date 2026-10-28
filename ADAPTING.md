@@ -31,7 +31,7 @@ The vocabulary of the domain is declared in one block at the top of
 `expander.py` and referenced everywhere else:
 
 ```python
-PROJECT_CODE_PATTERN = r"(D\d{5,6})"      # job identifier, e.g. D10001
+PROJECT_CODE_PATTERN = r"(P\d{5,6})"      # job identifier, e.g. P10001
 GROUP_KEYWORDS = r"BLOCK|BLK\.?"          # a cluster of units sharing drawings
 UNIT_KEYWORDS = r"LOT|LTS|LOTS"           # an individual unit inside a group
 LIST_CHARS = r"[\d\s,&\-TOANDtoand]+"     # what can appear inside a number list

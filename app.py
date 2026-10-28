@@ -124,7 +124,7 @@ def _demo_frames():
     # Anchor the series so it ends this week, otherwise the dashboard's default
     # "current period" view opens on an empty range.
     start = datetime.date.today() - datetime.timedelta(weeks=17)
-    models = [f"D10{code:04d} - MODEL {letter}{n}"
+    models = [f"P10{code:04d} - MODEL {letter}{n}"
               for code, letter in ((1023, "A"), (1044, "B"), (1071, "C"))
               for n in (1, 2)]
 
@@ -141,7 +141,7 @@ def _demo_frames():
                     "KPI": round(level, 4),
                 })
         df = pd.DataFrame(rows)
-        df["Project Code"] = df["Model Name"].str.extract(r"(D\d{6})")
+        df["Project Code"] = df["Model Name"].str.extract(r"(P\d{6})")
         df["Project Code"] = df["Project Code"].fillna("Standalone/Other")
         overlap = df.groupby(["Date", "KPI"])["Model Name"].transform(
             lambda x: "<br> • ".join(sorted(x.unique())))
@@ -179,7 +179,7 @@ def load_data():
     df2['Date'] = pd.to_datetime(df2['Date'], errors='coerce').dt.date
     df2['KPI'] = pd.to_numeric(df2['KPI'], errors='coerce')
     df2 = df2.dropna(subset=['Date', 'KPI'])
-    df2['Project Code'] = df2['Model Name'].str.extract(r'(D\d{6})')
+    df2['Project Code'] = df2['Model Name'].str.extract(r'(P\d{6})')
     df2['Project Code'] = df2['Project Code'].fillna('Standalone/Other')
     overlap_groups2 = df2.groupby(['Date', 'KPI'])['Model Name'].transform(lambda x: '<br> • '.join(sorted(x.unique())))
     df2['Overlapping Models'] = '• ' + overlap_groups2
@@ -194,7 +194,7 @@ def load_data():
     df3['Date'] = pd.to_datetime(df3['Date'], errors='coerce').dt.date
     df3['KPI'] = pd.to_numeric(df3['KPI'], errors='coerce')
     df3 = df3.dropna(subset=['Date', 'KPI'])
-    df3['Project Code'] = df3['Model Name'].str.extract(r'(D\d{6})')
+    df3['Project Code'] = df3['Model Name'].str.extract(r'(P\d{6})')
     df3['Project Code'] = df3['Project Code'].fillna('Standalone/Other')
     overlap_groups3 = df3.groupby(['Date', 'KPI'])['Model Name'].transform(lambda x: '<br> • '.join(sorted(x.unique())))
     df3['Overlapping Models'] = '• ' + overlap_groups3
@@ -372,7 +372,7 @@ def apply_legend(fig, mode, inside=True):
     seen_projects = {}
 
     for trace in fig.data:
-        match = re.match(r'(D\d{6})', trace.name)
+        match = re.match(r'(P\d{6})', trace.name)
         p_code = match.group(1) if match else "Standalone/Other"
 
         if mode == "📁 By Project":

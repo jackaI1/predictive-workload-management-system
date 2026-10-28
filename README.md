@@ -118,7 +118,7 @@ becoming `[1, 2, 3, 4, 5]`. The server prints its local URL. Open
 `http://127.0.0.1:8501`; demo mode starts on Forecast and needs no credentials.
 Stop it with Ctrl-C.
 
-In Forecast, parse `D12345 AA1 TO 3 AND BLOCK 1`, then open Edit scenario.
+In Forecast, parse `P12345 AA1 TO 3 AND BLOCK 1`, then open Edit scenario.
 Change receipts, duration, difficulty, priority, due dates or predecessors.
 Predecessors use `PROJECT/TASK`, comma-separated. Fill missing receipt supplies
 missing floor receipts using the planning date. The charts and explanations

@@ -9,7 +9,7 @@ DAY = date(2026, 10, 19)  # Monday
 
 
 def task(name='AA1', **kwargs):
-    values = dict(project='D12345', name=name, duration=2, difficulty=1.0,
+    values = dict(project='P12345', name=name, duration=2, difficulty=1.0,
                   architecture=DAY-timedelta(days=3), floor=DAY-timedelta(days=3),
                   truss=DAY-timedelta(days=3))
     values.update(kwargs)
@@ -18,8 +18,8 @@ def task(name='AA1', **kwargs):
 
 def test_title_expansion_selects_models_blocks_and_project_exactly():
     tasks = [task('AA1'), task('AA2'), task('AA3'), task('BLOCK 1'),
-             task('BLOCK 10'), task('AA1', project='D123456')]
-    assert [t.name for t in select_tasks('D12345 AA1 TO 3 AND BLOCK 1', tasks)] == [
+             task('BLOCK 10'), task('AA1', project='P123456')]
+    assert [t.name for t in select_tasks('P12345 AA1 TO 3 AND BLOCK 1', tasks)] == [
         'AA1', 'AA2', 'AA3', 'BLOCK 1']
     assert select_tasks('no project', tasks) == []
 
@@ -90,7 +90,7 @@ def test_duplicate_unknown_cycle_and_horizon_do_not_silently_schedule():
     a = task()
     with pytest.raises(ValueError, match='Duplicate'):
         forecast([a, a], DAY)
-    unknown = forecast([replace(a, predecessors=('D12345/UNKNOWN',))], DAY)
+    unknown = forecast([replace(a, predecessors=('P12345/UNKNOWN',))], DAY)
     assert 'Unknown predecessor' in unknown.results[a.key].explanation
     b = task('AA2', predecessors=(a.key,))
     cycle = forecast([replace(a, predecessors=(b.key,)), b], DAY)
@@ -101,7 +101,7 @@ def test_duplicate_unknown_cycle_and_horizon_do_not_silently_schedule():
 
 
 def test_capacity_can_split_a_day_across_projects():
-    a, b = task(duration=2), task('BB1', project='D12346', duration=2)
+    a, b = task(duration=2), task('BB1', project='P12346', duration=2)
     plan = forecast([a, b], DAY, capacity=1)
     assert {x.task for x in plan.allocations if x.day == DAY} == {a.key, b.key}
     assert sum(x.units for x in plan.allocations if x.day == DAY) == 1

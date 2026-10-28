@@ -56,7 +56,7 @@ class Workbook:
             del self.sheets[r['sheetId']].rows[r['startIndex']:r['endIndex']]
 
 
-def parent(title='D12345 AA1 TO 2', start='2026-10-19', duration='2', task_id='synthetic-parent'):
+def parent(title='P12345 AA1 TO 2', start='2026-10-19', duration='2', task_id='synthetic-parent'):
     return ['2026-10-19', title, '', '', '', '', duration, '', '', '', start, '2026-10-20', '', task_id]
 
 
@@ -78,7 +78,7 @@ def run_pipeline(monkeypatch, workbook):
     monkeypatch.setattr(expander, 'load_difficulty_tiers', lambda *a: [
         {'min':0, 'max':2500, 'base_difficulty':1.0},
         {'min':2500, 'max':float('inf'), 'base_difficulty':1.5}])
-    monkeypatch.setattr(expander, 'list_spreadsheets_in_folder', lambda *a: {'D12345 synthetic': 'fixture'})
+    monkeypatch.setattr(expander, 'list_spreadsheets_in_folder', lambda *a: {'P12345 synthetic': 'fixture'})
     data = schedule()
     monkeypatch.setattr(expander, 'load_and_parse_schedule', lambda *a: (data, 5, 6, 7))
     expander.main()
@@ -101,8 +101,8 @@ def test_pipeline_kpis_business_days_start_dates_and_repeat_convergence(monkeypa
 
 
 def test_scope_removal_updates_surviving_child_without_shifting_wrong_row(monkeypatch, capsys):
-    rows = [['header'], parent('D12345 AA2'), child('AA1'), child('AA2')]
-    hist = [['header'], ['D12345 - AA1', '2026-10-19', '.5']]
+    rows = [['header'], parent('P12345 AA2'), child('AA1'), child('AA2')]
+    hist = [['header'], ['P12345 - AA1', '2026-10-19', '.5']]
     book = Workbook([rows, hist, hist])
     run_pipeline(monkeypatch, book)
     assert 'Error' not in capsys.readouterr().out
@@ -113,8 +113,8 @@ def test_scope_removal_updates_surviving_child_without_shifting_wrong_row(monkey
 
 
 def test_later_dated_parent_wins_in_either_order(monkeypatch, capsys):
-    old = parent('D12345 AA1', '2026-10-19', '2', 'old')
-    new = parent('D12345 AA1', '2026-10-20', '4', 'new')
+    old = parent('P12345 AA1', '2026-10-19', '2', 'old')
+    new = parent('P12345 AA1', '2026-10-20', '4', 'new')
     for parents in ([old, new], [new, old]):
         book = Workbook([[['header'], *parents], [['header']], [['header']]])
         run_pipeline(monkeypatch, book)
@@ -228,8 +228,8 @@ def test_block_start_date_waits_for_missing_member_and_rolls_up_latest_date():
 
 
 def test_equal_date_ownership_is_deterministic_and_master_header_is_preserved(monkeypatch, capsys):
-    a = parent('D12345 AA1', task_id='synthetic-a', duration='2')
-    b = parent('D12345 AA1', task_id='synthetic-b', duration='4')
+    a = parent('P12345 AA1', task_id='synthetic-a', duration='2')
+    b = parent('P12345 AA1', task_id='synthetic-b', duration='4')
     for parents in ([a, b], [b, a]):
         header = ['Snapshot', 'Task', 'Model']
         book = Workbook([[header, *parents], [['header']], [['header']]])
