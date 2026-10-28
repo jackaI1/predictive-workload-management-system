@@ -2,7 +2,7 @@
 
 A Python workflow that expands tracker entries into model-level work, derives receipt-based start dates and forecasts weekday allocations under a shared daily capacity.
 
-https://github.com/user-attachments/assets/5b9f05a1-9710-4579-b775-75d50166352b
+https://github.com/user-attachments/assets/74bed0e6-629f-4761-99cf-799c48bd05d1
 
 ## Overview
 
